@@ -16,6 +16,10 @@ Links
 - FAQ: https://www.claudiotortorelli.it/lettera22-faq-informazioni-software.html
 - Demo page: https://www.claudiotortorelli.it/lettera22-test-tutte-le-funzioni-stile.html
 
+Hello world
+----------
+https://github.com/claudio-tortorelli/lettera22/wiki/Lettera22---Basic-Introduction
+
 Installation info
 -----
 Unpack the archive in a local folder and start "run.bat". It is possible to copy the folder on a USB stick: the software does not use external references to its own folder.
