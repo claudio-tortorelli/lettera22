@@ -20,9 +20,26 @@ Installation info
 -----
 Unpack the archive in a local folder and start "run.bat". It is possible to copy the folder on a USB stick: the software does not use external references to its own folder.
 
-Requirements
+License
+------
+Lettera22 is distributed with MIT license (https://choosealicense.com/licenses/mit/).
+
+Features
 -----
-Lettera22 supports Windows only
+- parser --> compiler --> linker document flow
+- simplified but powerfull syntax to define document structure and elements
+- offline and online work mode
+- automatic main page (index) generation
+- automatic document revision history
+- autoconsistent and portable final document 
+- automatic document publishing to remote web space
+- db-less, no database needed, no SQL injection
+- only basic technologies involved produce safe and durable documents
+- support to "PEC" signature, to improve copyright
+- predefined and optimized document style
+- no advertisement, cookie, profiling or statistics: GDPR ready!
+- easy to be integrated into other software
+- free of use
 
 Some technical detail
 ---------------------
