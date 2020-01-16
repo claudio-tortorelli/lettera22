@@ -11,7 +11,7 @@ I supplied an "hello world" in the Wiki to give a basic overview of the software
 
 Links
 -----
-Download page: https://www.claudiotortorelli.it/lettera22-download-software-last-version-changelog.html
-Main guide (italian): https://www.claudiotortorelli.it/lettera22-guida-per-lo-scrittore.html#2
-FAQ: https://www.claudiotortorelli.it/lettera22-faq-informazioni-software.html
-Demo page: https://www.claudiotortorelli.it/lettera22-test-tutte-le-funzioni-stile.html
+- Download page: https://www.claudiotortorelli.it/lettera22-download-software-last-version-changelog.html
+- Main guide (italian): https://www.claudiotortorelli.it/lettera22-guida-per-lo-scrittore.html#2
+- FAQ: https://www.claudiotortorelli.it/lettera22-faq-informazioni-software.html
+- Demo page: https://www.claudiotortorelli.it/lettera22-test-tutte-le-funzioni-stile.html
