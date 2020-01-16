@@ -24,3 +24,23 @@ Requirements
 -----
 Lettera22 supports Windows only
 
+Some technical detail
+---------------------
+Lettera22 is developed in C# with target framework 4.7.2. At the moment it is therefore only for Windows platform (from Windows 7). It is a modular software, or toolset, consisting of a set of console applications  which can be easily integrated into batch scripts or other software. It has a configuration file through which it is possible to customize its behavior (basic and advanced options).
+
+Lettera22 is designed to be self-consistent: it is not installed, but is performed directly within a folder containing the necessary data.
+
+Embedded C# dependencies:
+- OpenPop (POP3 mail)
+- Aegis Implicit Mail (https://sourceforge.net/projects/netimplicitssl/)
+- HtmlAgilityPack.NetCoreCodePages (https://www.nuget.org/packages/HtmlAgilityPack.NetCoreCodePages/)
+
+External dependencies:
+- Notepad ++ (https://notepad-plus-plus.org/download/)
+- Sorttable.js https://www.kryogenix.org/code/browser/sorttable/)
+
+The first version included integration with IPFS (https://dist.ipfs.io/#go-ipfs), which has however been removed at present.
+
+Why 'Lettera22'?
+-----
+It is a tribute to Olivetti's Lettera 22, a typewriter that made an epoch for style and practicality. It is still considered an exceptional tool, an emblem of creativity and functionality, celebrated in the museums of technology.
