@@ -1,5 +1,5 @@
 # lettera22
-Lettera22 is a toolset for automated text processing that transforms raw text files into stylish artifacts (eg HTML).
+Lettera22 is a toolset for automated text processing that transforms raw text files into stylish artifacts (eg HTML), ready to be published on a website.
 
 It consists of a series of command line tools (CLI), each of which has a specific role in the processing and management 
 of published texts. A portable version of the well-known Notepad ++ (npp) editor is integrated in the package, 
