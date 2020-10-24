@@ -5,8 +5,9 @@ It consists of a series of command line tools (CLI), each of which has a specifi
 of published texts. A portable version of the well-known Notepad ++ (npp) editor is integrated in the package, 
 to support the text writing and contextual start of the tools.
 
-Actually no sources are provided but you can download and test current binary version.
-Sorry but no translated documentation is currently ready: the tool is meant for Italian writers ;)
+From version 2019.12 sources are available. Moreover you can download and test current binary version.
+
+Sorry but no translated documentation is currently ready: the tool is currently meant for italian writers ;)
 I supplied an "hello world" in the Wiki to give a basic overview of the software.
 
 Links
