@@ -1,0 +1,39 @@
+﻿# Lettera22 document (ver. 2019-12 e superiori)
+# -------------------------------------------------------------
+# Maggiori info: https://www.claudiotortorelli.it
+#
+# Sintassi
+# -------------------------------------------------------------
+# 	CITAZIONE: 			''Si sta come \ d'autunno \ sugli alberi \ le foglie''
+# 	IMMAGINE:			[i:<path file locale>], [i:.\img\image.jpg]
+# 	RIF. BIBLIOGRAFICO:	[b:<riferimento bibliografico>], [b:M. Pinco, Titolo, Città, Editore, 2003]
+# 	ALLEGATO:			[a:<path file relativo remoto>|<nome>], [a:/allegati2018/pippo.zip|pippo]
+# 	ITALICO:			<i>stile italico</i>
+# 	GRASSETTO:			<b>stile grassetto</b>
+# 	LISTA NON ORDINATA:	- 
+# 	LISTA ORDINATA:	 	* 
+# 	INTERRUZIONE LINEA:	||
+# 	::<chapter>::noSummary::noTitle
+# 		::<subchapter>
+#			::<subsubchapter>
+# -------------------------------------------------------------
+[header]intestazione
+[title]titolo
+[subtitle]sotto titolo
+[author]autore
+[category]categoria
+#[place]
+#[creation]
+[showPublishDate]
+[showRevision]
+[showRebuildDate]
+#[showUnitNumber]
+[abstract]abstract
+#[noSummary]
+[introduction]introduzione
+[noGlobal]
+#[noProcess]
+#[dedication]
+[start]
+::Capitolo 1 - Nuovo
+bla bla bla...

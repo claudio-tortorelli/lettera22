@@ -1,0 +1,26 @@
+Initializing daemon...
+Swarm listening on /ip4/127.0.0.1/tcp/4001
+Swarm listening on /ip4/169.254.191.147/tcp/4001
+Swarm listening on /ip4/169.254.202.38/tcp/4001
+Swarm listening on /ip4/169.254.212.44/tcp/4001
+Swarm listening on /ip4/169.254.231.84/tcp/4001
+Swarm listening on /ip4/192.168.0.5/tcp/4001
+Swarm listening on /ip4/192.168.1.2/tcp/4001
+Swarm listening on /ip4/192.168.56.1/tcp/4001
+Swarm listening on /ip6/::1/tcp/4001
+Swarm listening on /p2p-circuit/ipfs/QmZPNyXA7qQ7HWEkNxMYgm9rgFnjHfrdbdBf9Guz6CbUSU
+Swarm announcing /ip4/127.0.0.1/tcp/4001
+Swarm announcing /ip4/169.254.191.147/tcp/4001
+Swarm announcing /ip4/169.254.202.38/tcp/4001
+Swarm announcing /ip4/169.254.212.44/tcp/4001
+Swarm announcing /ip4/169.254.231.84/tcp/4001
+Swarm announcing /ip4/192.168.0.5/tcp/4001
+Swarm announcing /ip4/192.168.1.2/tcp/4001
+Swarm announcing /ip4/192.168.56.1/tcp/4001
+Swarm announcing /ip6/::1/tcp/4001
+API server listening on /ip4/127.0.0.1/tcp/5001
+Gateway (readonly) server listening on /ip4/127.0.0.1/tcp/8080
+Daemon is ready
+
+Received interrupt signal, shutting down...
+(Hit ctrl-c again to force-shutdown the daemon.)
