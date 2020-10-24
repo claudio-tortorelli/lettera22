@@ -1,0 +1,160 @@
+﻿TODO-IDEE E LAVORAZIONE
+-----------------------
+
+Migrazione verso Java
+- mantenere retrocompatibilità documenti attuali
+- COMMON:
+	rimane il package di utility base
+	logger reale, al limite come quello di opuscv
+	command line come ValidatorDebug
+	rimuovere Executable
+	Globals, file ini
+- METADOC:
+	introdurre factory
+
+
+
+PLANNED
+	log con livello tra le opzioni
+		il log su file disabilitabile da opzioni, di default false
+	pulsanti grassetto e corsivo
+	revisione [showPublishDate] e [showRebuildDate]
+	comando eliminazione contestuale di txt e xml da texwork
+	primo paragrafo senza rientro, i restanti si
+	possibilità di spaziare o non spaziare i paragrafi
+	revisione ordine tag nel template
+	verifica che il txt sia incluso nella cartella textwork
+	link interni a documento (link a paragrafi e immagini che si possano aggiornare dinamicamente)
+	traslitterazione e formule matematiche
+	tool per rinominare i documenti (locale e remoto)
+	apertura del compilato diretta, senza passare da rebuild (se presente)
+	rivedere e semplificare la verifica della firma pec (il bat hash non  funziona?)
+	tool per eliminare i documenti (comprese le revisioni)
+	backup remoto con zip crittato
+	crittare file opzioni
+	[EXE] lettera22.cleaner: cerca ed elimina elementi locali e remoti non più pubblicati	
+	[EXE] lettera22.pdfwriter: genera il documento pdf da un xml
+	[EXE] lettera22.copyright: verifica randomicamente sul web la presenza di parti di documenti pubblicati
+	[EXE] lettera22.wtf: segnala elementi remoti modificati DOPO l'ultima pubblicazione ufficiale
+	
+	::Roadmap
+	La roadmap di sviluppo sintetizza le funzionalità che <i>potrebbero</i> essere introdotte nelle future versioni. L'ordine delle feature non è significativo.
+		
+		::Script, moduli e integrazione
+			- modulo di backup/synch/restore automatico dei contenuti
+			- modulo di aggiornamento/mirror
+			- modulo di generazione di contenuti stampabili PDF
+			- docking box in Npp dove rappresentare l'html del contenuto compilato
+			- modulo link checker (validità link interni)
+			- integrazione nella system tray e menù contestuale	
+		
+		::Features
+			- verifica automatica della validità dell'html tramite il https://validator.w3.org (contenuto e indice)
+			- visualizzazione ottimizzata da dispositivi mobile
+			- supporto al testo preformattato (inclusione testo raw)
+			- supporto alla generazione di rss ai contenuti pubblicati nell'indice
+			- automatismo di sincronizzazione della cartella remota con quella locale (eliminazione file extra)
+			- inclusione tra file
+			- includere tempo di generazione di ogni pagina
+			- supporto al "timbro digitale"
+			- rename automatizzato dei documenti
+			- supporto alla sintassi per formule matematiche
+			- supporto traslitterazione 
+			- logger con livello impostabile da opzioni
+		
+		::Refactoring
+			- refactoring e analisi codice, ottimizzazione e segmentazione delle funzioni
+			- revisione, integrazione e semplificazione dei messaggi di log
+			- traduzione dei tool in standard C++ (performances) o Java (portabilità)
+
+		::Test
+			- introdurre sistema di testing (regression test)
+		
+		::IPFS
+			- possibile reintroduzione utilizzo IPFS
+	
+FATTO PER 2020.xx
+----------------------------
+	progetto su github 
+	
+
+FATTO PER 2019.12
+----------------------------
+refactoring
+	[LIB] lettera22.common: classi base utils
+	[LIB] lettera22.metadoc: il metadoc è il documento parsato in vari elementi
+	[LIB] lettera22.HTML: libreria tool per la produzione di HTML
+	[EXE] lettera22.parser: genera l'xml di uno o più testi	
+	[EXE] lettera22.web: genera l'html dall'xml									-->compiler
+	[LIB] lettera22.ipfs: gestisce la pubblicazione su ipfs e recupera versioni precedenti -->rimosso
+	[EXE] lettera22.index: genera l'indice html da tutti gli xml pubblicabili	-->linker
+	[EXE] lettera22.publisher: pubblica i risultati prodotti					-->linker
+	---------
+	aggiornato il framework target
+	eliminata IPFS per il momento
+	aggiornato TLS 1.2 per invio email
+	sistema di controllo flow con batch dos
+	pubblicare solo su ftp
+	calcolare lo sha256 dei doc al posto dell'hash IPFS
+	cambio versione a 2019.12 invece che 1.1	
+	nuova triade parser-compiler-linker
+	hash doc sha256 invece che md5
+	pubblicare su pre-publish quando si esegue la build
+	verificare che l'html in pre-publish è uguale o no a quello in publish	
+	inglobare il font woff, via shared res
+	aggiornamento npp	
+	integrazione toolbar in npp
+	font serif ancora al giro?
+	snellimento options inutili
+	pulizia codice obsoleto
+	numero contenuti in indice
+	icona per aprire le opzioni
+	risistemare la cartella output	
+	setup ftp aruba e dominio
+	rebuild tutti i docs e attachement
+	completare gli allegati online
+	linker: ci deve essere possibilità di forzare solo un doc + index	
+	pagina help su npp22
+
+FATTO PER 1.0 - Dicembre '18
+----------------------------
+ipfs e notepad riorganizzati sotto bin
+reset cartella publish
+allegati verso url gestito a mano
+fix di sezioni con il tab in coda invece che in testa
+invertire le opzioni "no"
+override della data di creazione (opzionale) via tag
+controllo globale se è attiva la connettività
+	replica errori no connessione processo locale e folder
+https://validator.w3.org/check?uri=www.claudiotortorelli.it&charset=%28detect+automatically%29&doctype=Inline&group=0
+	indice non passa perchè c'è immagine webhost
+nome file html come concatenazione automatica - opzioni basic o concat
+	idea abbandonata: complicato gestire caratteri speciali
+sparire revisione precedente - opzioni
+indice ordinato per data creazione di default (a livello creazione html)
+indice con la firma in alto
+firma e marca dell'indice
+	no, meglio usare la pec
+		i certificati di consegna pec devono essere archiviati, non pubblicati
+		pec: idea, inviare per pec a se stessi l'indice contenente anche l'hash ipfs del documento o il link
+			- solo l'autore può aver generato quell'hash ipfs di un documento (verificare l'aggiunta stesso doc 2 volte nello stesso repo e in repo diversi)
+			- solo l'autore ha accesso alla sua pec
+			- la pec comprova data e ora di invio e ricezione
+tag dedica
+tag "no process"
+anche l'indice deve avere una versione precedente su IPFS
+	ok, ma non c'è un textwork abbinato, occorre creare un file esterno con l'hash della versione precedente
+non riaggiungere sempre tutte le risorse a ipfs, solo se cambiano
+		attenzione: il fatto di riaggiungere le risorse è di aiuto a mantenerle "vive" in IPFS
+			basta farlo alla prima inizializzazione
+pubblicazione ftp + ipfs
+	il textwork deve contenere sia il path al text che all'html 
+	creare un oggetto Resource che rappresenta una generica risorsa esterna al 
+		textwork
+		indice
+	creare un oggetto publisher che ha accesso a IPFS e a FTPClient
+		contiene 3 metodi
+			2 pubblici di publishIndex e publishTextWork
+				pubblica textwork solo se no global
+				i link dell'index sono verso pagine locali, i link delle versioni precedenti sono ipfs
+			1 privato richiamato da questi per publishResource			
