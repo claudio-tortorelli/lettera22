@@ -20,8 +20,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lettera22.Compiler", "Lette
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lettera22.Linker", "Lettera22.Linker\Lettera22.Linker.csproj", "{B710B7D5-32CC-45B9-AD05-31D37A52FD2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lettera22.IPFS", "archivedSource\Lettera22.IPFS\Lettera22.IPFS.csproj", "{8EE7BC82-F2D9-493B-B84D-B7A28B4055E2}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -92,16 +90,6 @@ Global
 		{B710B7D5-32CC-45B9-AD05-31D37A52FD2C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{B710B7D5-32CC-45B9-AD05-31D37A52FD2C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{B710B7D5-32CC-45B9-AD05-31D37A52FD2C}.Release|Win32.ActiveCfg = Release|Any CPU
-		{8EE7BC82-F2D9-493B-B84D-B7A28B4055E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8EE7BC82-F2D9-493B-B84D-B7A28B4055E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8EE7BC82-F2D9-493B-B84D-B7A28B4055E2}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{8EE7BC82-F2D9-493B-B84D-B7A28B4055E2}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{8EE7BC82-F2D9-493B-B84D-B7A28B4055E2}.Debug|Win32.ActiveCfg = Debug|Any CPU
-		{8EE7BC82-F2D9-493B-B84D-B7A28B4055E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8EE7BC82-F2D9-493B-B84D-B7A28B4055E2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8EE7BC82-F2D9-493B-B84D-B7A28B4055E2}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{8EE7BC82-F2D9-493B-B84D-B7A28B4055E2}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{8EE7BC82-F2D9-493B-B84D-B7A28B4055E2}.Release|Win32.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
