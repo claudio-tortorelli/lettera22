@@ -26,8 +26,8 @@ namespace Lettera22.Linker
         {
             Globals.m_Logger.Info("Sign the index");
             string nowID = DateTime.Now.ToString("yyyy_MM_dd_hh_mm_ss");
-            string mailID = fileHash;
-            string body = "Lettera22 - FEA signature of content index";
+            string mailID = Globals.IndexSignPrefix() + fileHash;
+            string body = "Lettera22 - FEA signature of content index hash";
 
             Directory.CreateDirectory(Globals.IndexHistoryFolder());
 
@@ -35,14 +35,14 @@ namespace Lettera22.Linker
             Email.Send(Globals.EmailAddress(), Globals.EmailAddress(), mailID, body, indexHTMLPath);
             for (int iTrial = 0; iTrial < 2; iTrial++)
             {
-                List<OpenPop.Mime.Message> signedMessages = Email.Receive(Globals.POP3Host(), Globals.POP3Port(), Globals.POP3SSLEnabled(), Globals.POP3Username(), Globals.POP3Password(), true);
+                List<OpenPop.Mime.Message> signedMessages = Email.Receive(Globals.POP3Host(), Globals.POP3Port(), Globals.POP3SSLEnabled(), Globals.POP3Username(), Globals.POP3Password(), Globals.IndexSignPrefix());
 
                 for (int iMsg = 0; iMsg < signedMessages.Count; iMsg++)
                 {
                     // check if it is the right email
                     System.Net.Mail.MailMessage msg = signedMessages[iMsg].ToMailMessage();
                     if (!msg.Subject.Contains(mailID) || !msg.Subject.ToLower().Contains("consegna"))
-                        continue;
+                        continue; // looking for current message
 
                     // extract the attachements
                     foreach (var attachment in signedMessages[iMsg].FindAllAttachments())

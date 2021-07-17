@@ -54,6 +54,7 @@ namespace Lettera22.Common
         private static string INDEX_TITLE = "";
         private static string INDEX_SUBTITLE = "";
         private static string INDEX_OTHERINFO = "";
+        private static string INDEX_SIGN_PREFIX = "[L22]";
         private static bool ABSTRACT_ONLY = false;
                 
         private static string EMAIL_ADDRESS = "";
@@ -406,7 +407,8 @@ namespace Lettera22.Common
         public static string IndexTitle() { return INDEX_TITLE; }
         public static string IndexSubTitle() { return INDEX_SUBTITLE; }
         public static string IndexOtherInfo() { return INDEX_OTHERINFO; }
-
+        public static string IndexSignPrefix() { return INDEX_SIGN_PREFIX; }
+        
         public static bool IsAbstractOnly() { return ABSTRACT_ONLY; }
                 
         public static bool IsCheckingHash() { return CHECK_HASH; }

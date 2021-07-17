@@ -80,7 +80,7 @@ namespace Lettera22.Common
         /**
          * http://hpop.sourceforge.net/examples.php
          */
-        public static List<Message> Receive(string hostname, int port, bool useSsl, string username, string password, bool deleteMessages)
+        public static List<Message> Receive(string hostname, int port, bool useSsl, string username, string password, string messagePrefix)
         {
             // The client disconnects from the server when being disposed
             using (Pop3Client client = new Pop3Client())
@@ -102,9 +102,12 @@ namespace Lettera22.Common
                 // Most servers give the latest message the highest number
                 for (int i = messageCount; i > 0; i--)
                 {
-                    allMessages.Add(client.GetMessage(i));
-                    if (deleteMessages)
+                    System.Net.Mail.MailMessage msg = client.GetMessage(i).ToMailMessage();
+                    if (msg.Subject.StartsWith(messagePrefix)) // consider lettera22 messages only
+                    {
+                        allMessages.Add(client.GetMessage(i));
                         client.DeleteMessage(i);
+                    }
                 }
                 
 

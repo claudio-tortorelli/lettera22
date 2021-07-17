@@ -43,6 +43,19 @@ namespace Lettera22.HTML
 
         cssStyle += @"<style type=""text/css"">
 
+//body {
+//    background-color: #faf9f1;
+//    font-size: 20px;
+//    #width: 900px;
+//    word-wrap: break-word;
+//    position:relative;
+//    #left:10%;    
+//    #right: 10%;
+//    #margin-left:-500px;
+//    margin:15%;
+//    font-family: 'Computer Modern Serif';
+//}
+
 body {
     background-color: #faf9f1;
     font-size: 18px;
