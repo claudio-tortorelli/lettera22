@@ -1,0 +1,147 @@
+﻿# Lettera22 document template 
+# supportato da ver. 1.0.0 e superiori
+# -------------------------------------------------------------
+# 	CITAZIONE: 			''Si sta come \ d'autunno \ sugli alberi \ le foglie''
+# 	IMMAGINE:			[i:<path file locale>], [i:.\img\image.jpg]
+# 	RIF. BIBLIOGRAFICO:	[b:<riferimento bibliografico>], [b:M. Pinco, Titolo, Città, Editore, 2003]
+# 	ALLEGATO:			[a:<path file relativo remoto>|<nome>], [a:/allegati2018/pippo.zip|pippo]
+# 	ITALICO:			<i>stile italico</i>
+# 	GRASSETTO:			<b>stile grassetto</b>
+# 	LISTA NON ORDINATA:	- 
+# 	LISTA ORDINATA:	 	* 
+# 	INTERRUZIONE LINEA:	||
+# 	::<chapter>::noSummary::noTitle
+# 		::<subchapter>
+#			::<subsubchapter>
+# -------------------------------------------------------------
+[header]Test di Lettera22
+[title]Tutte le funzionalità di stile di Lettera22
+[subtitle]Cosa si può fare con Lettera22
+[author]Claudio Tortorelli
+[category]Lettera22
+[place]Arezzo
+#[creation] 
+[showPublishDate]
+[showRevision] 
+[showRebuildDate]
+[showUnitNumber]
+[abstract]Tutte le funzionalità e le strutture supportate in un testo prodotto da Lettera22
+#[noSummary]
+[introduction]Questo testo è utilizzato per verificare le feature introdotte, controllare i fix ai bug rilevati e mostrare lo stato dell'arte del software.
+#[noGlobal]
+#[noProcess]
+[dedication]A mia moglie Federica (questa è una dedica!)
+[start]
+::Il testo
+	::Font
+	In Lettera22 il font è Computer Modern creato da Donald Knuth [b:Donald E. Knuth ((高德纳)), Professor Emeritus of The Art of Computer Programming at Stanford University] con il suo software METAFONT. [l:https://it.wikipedia.org/wiki/Computer_Modern]
+	Lo stesso font è utilizzato di default in TeX e LaTeX. 
+	
+	::Paragrafi
+	I paragrafi sono semplici: uno scrive qualcosa e poi va a capo. Ecco il paragrafo
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Punto e a capo!
+	bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+	Ogni riga contiene al massimo 66 caratteri e i paragrafi hanno un rientro all'inizio della prima riga che ne aumenta la leggibilità. 
+	Tra questa riga 
+
+
+	e questa ci sono tre righe vuote, due vengono ignorate.
+	E' possibile andare a capo senza creare un nuovo paragrafo ma interrompendo solo la linea||
+	Si utilizza il doppio carattere '|' per ottenere questo.
+	
+	::Formato
+	Sfruttando i tag html standard < i > e < b >, è possibile scrivere parole <i>in corsivo italico</i> oppure nel <b>beneamato grassetto</b>. Non è possibile cambiare la dimensione del font.
+	
+	::L'HTML 
+	L'html non è usabile per formattare il testo con l'eccezione dei già citati grassetto e italico.
+	Ad esempio:
+	- <body>
+	- <br>
+	- <a href="topolino.it">topolino</a>
+	- <h2>
+	- </TABLE>
+	non vengono interpretati. In un paragrafo si può scrivere <li> </li> senza per questo creare una lista...
+	
+	::Citazioni
+	Di seguito una citazione semplice
+	'il mattino ha l'oro in bocca'
+
+	Questa invece è una citazione virgolettata su più righe.
+	Deve venire ben evidenziata.
+	''tanto va la gatta al lardo che ci lascia lo zampino. 
+	moglie e buoi dei paesi tuoi''
+
+	::Struttura
+	La numerazione di questa struttura è fatta automaticamente in base all'indentazione del testo 
+		::Sottosezione ottenuta tramite l'indentazione (una tabulazione)
+		Una sezione comincia sempre con ::
+			::Sottosottosezione (due tabulazioni) 
+		::Tornando indietro nella tabulazione si chiude una sezione
+		...i numeri di sezione sono attivabili tramite il tag [showUnitNumber]...
+	
+::L'indice
+Le sezioni e le sottosezioni possono o meno apparire in indice, applicando i metatag ::noSummary o ::noTitle.
+	::magia, una sezione senza titolo e non in indice::noSummary::noTitle
+	SEZIONE FANTASMA : qui c'è del testo all'interno di una sezione fantasma, perché è definita con i tag di sezione ::noSummary::noTitle
+	
+	::questa invece... 
+	Questa sezione invece c'è. E la sua numerazione non dovrebbe risentire dell'assenza della precedente.
+	
+	::senza titolo::noTitle
+	[senza titolo]
+	La sezione presente al contrario la trovi nel sommario ma non ha un titolo visibile nel testo (utilizzo del tag ::noTitle)
+	
+	::senza sommario::noSummary
+	Viceversa qui la sezione ha il titolo, ma non comparirà nel sommario (utilizzo del tag ::noSummary)
+	
+	::verifichiamo la numerazione
+	Mi aspetto che la numerazione di questa sezione non tenga di conto della presenza delle due sezioni precedenti!	
+	 
+
+::Le immagini
+E' possibile inserire delle immagini nel testo. 
+[i:.\img\topina_400.jpg]
+Per il momento sempre centrate, ridotte e non sovrapposte a nulla. Ma dovrebbe essere sufficiente.
+ 
+::I link
+I link ipertestuali verso risorse esterne non sono implementati: sono presenti solo link interni al documento o verso l'indice generale (automaticamente generati). Non è parte della filosofia di Lettera22 portare il lettore "fuori" da ciò che sta leggendo. Per questo "www.claudiotortorelli.it" non viene tradotto in nulla di cliccabile.
+
+	::Gli allegati
+	L'allegato in Lettera22 è qualcosa di scaricabile, la cui risorsa collegata è presente <i>in una sottocartella del dominio principale</i>. 
+	Ad esempio [a:/lettera22/lettera22-test-tutte-le-funzioni-stile.txt|QUI] si trova il documento da cui è stata generata da Lettera22 questa pagina di prova. Non è possibile inserire allegati collocati esternamente al proprio dominio e ogni allegato sarà aperto in una nuova scheda del browser.
+
+	::La bibliografia
+	Per chi vuol scrivere un documento "autorevole" è necessario citare le proprie fonti. E' quindi presente un apposito tag [ b: che genera automaticamente in calce al documento un riferimento bibliografico alla fonte citata all'interno di un paragrafo. Il numero progressivo dei riferimenti, viene automaticamente assegnato e incrementato in base all'ordine dei tag. Ad esempio su Wikipedia (https://it.wikipedia.org/wiki/Bibliografia) sono presenti i seguenti due esempi [b:M. Scialuga, Introduzione allo studio della filologia classica, Alessandria, Edizioni dell'Orso, 2003.] e [b:Dossier Brigate Rosse, 1969-1975, a cura di Lorenzo Ruggiero, Milano, Kaos edizioni, 2007]
+
+::Le liste 
+Sono supportate sia liste ordinate che generiche.
+Vediamo un bell'elenco non ordinato di tutti i tag supportati prima del tag di inizio testo "[start]" 
+- [header]
+- [title]
+- [subtitle]
+- [author]
+- [category]
+- [place]
+- [showPublishDate]
+- [showRevision] 
+- [showRebuildDate]
+- [showUnitNumber]
+- [abstract]
+- [noSummary]
+- [introduction]
+- [bibliography]
+- [noGlobal]
+- [noProcess]
+- [dedication]
+mentre questa invece è una lista ordinata dei tag ammessi all'interno del test
+* [i:<path immagine>]
+* [b:<citazione della fonte bibliografica>]
+* [a:<path file relativo remoto>|<nome>]
+* '' per inizio/fine citazione
+* - per lista non ordinata
+* * per lista ordinata
+come si vede i metatag non vengono interpretati all'interno di una lista.
+Non sono ammesse parentesi quadre all'interno dei tag né tag spezzati in più paragrafi.
+
+
+
